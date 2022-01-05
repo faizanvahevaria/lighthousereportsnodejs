@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 04, 2022 at 06:00 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Host: localhost:3306
+-- Generation Time: Jan 05, 2022 at 07:57 PM
+-- Server version: 8.0.27-0ubuntu0.20.04.1
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `lhr_reports_company_list` (
-  `co_id` int(11) NOT NULL,
+  `co_id` int NOT NULL,
   `company_name` mediumtext NOT NULL,
   `website_url` mediumtext NOT NULL,
   `company_domain` mediumtext NOT NULL,
@@ -37,35 +38,35 @@ CREATE TABLE `lhr_reports_company_list` (
   `industry` mediumtext NOT NULL,
   `company_employee_count` mediumtext NOT NULL,
   `revenue_in_millions_usd` mediumtext NOT NULL,
-  `desktop_lhr_check` int(11) NOT NULL COMMENT '1 = true and 0 = false',
-  `d_performance` int(11) NOT NULL,
-  `d_pwa` int(11) NOT NULL,
-  `d_accessibility` int(11) NOT NULL,
-  `d_best_practices` int(11) NOT NULL,
-  `d_seo` int(11) NOT NULL,
+  `desktop_lhr_check` int NOT NULL COMMENT '1 = true and 0 = false',
+  `d_performance` int NOT NULL,
+  `d_pwa` int NOT NULL,
+  `d_accessibility` int NOT NULL,
+  `d_best_practices` int NOT NULL,
+  `d_seo` int NOT NULL,
   `d_lhr_html` mediumtext NOT NULL,
   `d_lhr_json` mediumtext NOT NULL,
   `d_lhr_csv` mediumtext NOT NULL,
-  `mobile_lhr_check` int(11) NOT NULL,
-  `m_performance` int(11) NOT NULL,
-  `m_pwa` int(11) NOT NULL,
-  `m_accessibility` int(11) NOT NULL,
-  `m_best_practices` int(11) NOT NULL,
-  `m_seo` int(11) NOT NULL,
+  `mobile_lhr_check` int NOT NULL,
+  `m_performance` int NOT NULL,
+  `m_pwa` int NOT NULL,
+  `m_accessibility` int NOT NULL,
+  `m_best_practices` int NOT NULL,
+  `m_seo` int NOT NULL,
   `m_lhr_html` mediumtext NOT NULL,
   `m_lhr_json` mediumtext NOT NULL,
   `m_lhr_csv` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `lhr_reports_company_list`
 --
 
 INSERT INTO `lhr_reports_company_list` (`co_id`, `company_name`, `website_url`, `company_domain`, `notes`, `company_linkedIn`, `industry`, `company_employee_count`, `revenue_in_millions_usd`, `desktop_lhr_check`, `d_performance`, `d_pwa`, `d_accessibility`, `d_best_practices`, `d_seo`, `d_lhr_html`, `d_lhr_json`, `d_lhr_csv`, `mobile_lhr_check`, `m_performance`, `m_pwa`, `m_accessibility`, `m_best_practices`, `m_seo`, `m_lhr_html`, `m_lhr_json`, `m_lhr_csv`) VALUES
-(2479, 'Symphony Health', 'http://www.symphonyhealth.com', 'symphonyhealth.com', 'one page website, need to update', 'https://www.linkedin.com/company/2479', 'Information Services', '359', '64.96', 1, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
-(2482, 'CT Corporation', 'https://www.wolterskluwer.com/en/solutions/ct-corporation', 'wolterskluwer.com', '', 'https://www.linkedin.com/company/2482', 'Information Services', '864', '78.44', 1, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
-(2583, 'University of Washington School of Law', 'http://www.law.uw.edu', 'uw.edu', '', 'https://www.linkedin.com/company/2583', 'Higher Education', '284', '51.79', 1, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
-(2930, 'Amphenol TCS', 'http://www.amphenol-tcs.com', 'amphenol-tcs.com', 'one page website, but have new one', 'https://www.linkedin.com/company/2930', 'Electrical & Electronic Manufacturing', '494', '6.65', 1, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
+(2479, 'Symphony Health', 'http://www.symphonyhealth.com', 'symphonyhealth.com', 'one page website, need to update', 'https://www.linkedin.com/company/2479', 'Information Services', '359', '64.96', 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
+(2482, 'CT Corporation', 'https://www.wolterskluwer.com/en/solutions/ct-corporation', 'wolterskluwer.com', '', 'https://www.linkedin.com/company/2482', 'Information Services', '864', '78.44', 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
+(2583, 'University of Washington School of Law', 'http://www.law.uw.edu', 'uw.edu', '', 'https://www.linkedin.com/company/2583', 'Higher Education', '284', '51.79', 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
+(2930, 'Amphenol TCS', 'http://www.amphenol-tcs.com', 'amphenol-tcs.com', 'one page website, but have new one', 'https://www.linkedin.com/company/2930', 'Electrical & Electronic Manufacturing', '494', '6.65', 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
 (3052, 'Western International University', 'http://west.edu', 'west.edu', '', 'https://www.linkedin.com/company/3052', 'Higher Education', '136', '25.31', 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
 (3073, 'CMD Group LLC', 'https://www.cmdgroup.com', 'cmdgroup.com', '', 'https://www.linkedin.com/company/3073', 'Information Services', '356', '64.11', 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
 (3194, 'Northwestern University Pritzker School of Law', 'https://www.law.northwestern.edu', 'northwestern.edu', '', 'https://www.linkedin.com/company/3194', 'Higher Education', '621', '81.11', 0, 0, 0, 0, 0, 0, '', '', '', 0, 0, 0, 0, 0, 0, '', '', ''),
@@ -2755,7 +2756,7 @@ ALTER TABLE `lhr_reports_company_list`
 -- AUTO_INCREMENT for table `lhr_reports_company_list`
 --
 ALTER TABLE `lhr_reports_company_list`
-  MODIFY `co_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=766584;
+  MODIFY `co_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=766584;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
