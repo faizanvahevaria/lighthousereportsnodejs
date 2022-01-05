@@ -8,13 +8,14 @@ const util = require('util');
 const db_connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'rv',
   database: 'ray_lhr'
 });
 
 const query = util.promisify(db_connection.query).bind(db_connection);
 
-const publicHtmlPath = './reports/';
+const publicDomainUrl = 'http://129.154.230.193/'
+const publicHtmlPath = 'reports/';
 const lhrDevice = 'desktop';
 
 
@@ -47,6 +48,10 @@ const lhrDevice = 'desktop';
   fs.writeFileSync(lhrHtmlReportFileName, lhrReportsObj[0]);
   fs.writeFileSync(lhrJsonReportFileName, lhrReportsObj[1]);
   fs.writeFileSync(lhrCsvReportFileName, lhrReportsObj[2]);
+
+  let lhrHtmlReportFileNamePublic = publicDomainUrl + lhrHtmlReportFileName;
+  let lhrJsonReportFileNamePublic = publicDomainUrl + lhrJsonReportFileName;
+  let lhrCsvReportFileNamePublic  = publicDomainUrl + lhrCsvReportFileName;
 
 
   // `.lhr` is the Lighthouse Result as a JS object
@@ -88,9 +93,9 @@ const lhrDevice = 'desktop';
       lhrAccessibility,
       lhrBestPractices,
       lhrSEO,
-      lhrHtmlReportFileName,
-      lhrJsonReportFileName,
-      lhrCsvReportFileName,
+      lhrHtmlReportFileNamePublic,
+      lhrJsonReportFileNamePublic,
+      lhrCsvReportFileNamePublic,
       company_id
     ];
 
