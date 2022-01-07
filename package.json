@@ -20,5 +20,9 @@
   "devDependencies": {
     "lighthouse": "^9.2.0",
     "mysql2": "^2.3.3"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.0",
+    "pm2": "^5.1.2"
   }
 }
