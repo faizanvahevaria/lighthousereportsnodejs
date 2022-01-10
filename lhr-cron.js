@@ -5,6 +5,11 @@ const chromeLauncher = require('chrome-launcher');
 const mysql = require('mysql');
 const util = require('util');
 
+const perf = require('execution-time')();
+perf.start();
+
+setTimeout(function(){ process.exit(1) }, 100000);
+
 const db_connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -107,4 +112,7 @@ const lhrDevice = 'desktop';
   }
 
   await chrome.kill();
+
+  const perf_result = perf.stop();
+  console.log('Time taken to execute = ' + perf_result.time);
 })();
